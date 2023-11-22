@@ -4,7 +4,14 @@
  * and open the template in the editor.
  */
 package aplikasipembayaranspp;
-
+import aplikasSpp.koneksi;
+import javax.swing.table.DefaultTableModel;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 /**
  *
  * @author leb1-4
@@ -16,8 +23,34 @@ public class petugas extends javax.swing.JInternalFrame {
      */
     public petugas() {
         initComponents();
+        aly();
     }
-
+    private void aly(){
+        DefaultTableModel m = (DefaultTableModel) tabel.getModel();
+            m.getDataVector().removeAllElements();
+        String sql = "select * from petugas ";
+        koneksi y = new koneksi();
+        ResultSet rs = y.ambildata(sql);
+        try {
+            while(rs.next()){
+                Vector baris = new Vector();
+                baris.add(rs.getInt("id_spp"));
+                baris.add(rs.getInt("username"));
+                baris.add(rs.getInt("password"));
+                 baris.add(rs.getInt("nama_petugas"));
+             m.addRow(baris);
+            }
+        } catch (Exception e) {
+            Logger.getLogger(petugas.class.getName()).log(Level.SEVERE, null, e);
+        }
+        tabel.setModel(m);
+    }
+    void selesai(){
+        username.setText("");
+        password.setText("");
+        petugas.setText("");
+        username.requestFocus();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -43,6 +76,7 @@ public class petugas extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tabel = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
+        status = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(102, 102, 255));
 
@@ -62,15 +96,35 @@ public class petugas extends javax.swing.JInternalFrame {
 
         simpan.setBackground(new java.awt.Color(0, 0, 255));
         simpan.setText("SIMPAN");
+        simpan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                simpanMouseClicked(evt);
+            }
+        });
 
         hapus.setBackground(new java.awt.Color(0, 0, 204));
         hapus.setText("HAPUS");
+        hapus.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                hapusMouseClicked(evt);
+            }
+        });
 
         batal.setBackground(new java.awt.Color(0, 0, 204));
         batal.setText("BATAL");
+        batal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                batalMouseClicked(evt);
+            }
+        });
 
         update.setBackground(new java.awt.Color(0, 0, 153));
         update.setText("UPDATE");
+        update.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                updateMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -154,8 +208,13 @@ public class petugas extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 572, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 572, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(259, 259, 259)
+                                .addComponent(status)))
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -170,6 +229,8 @@ public class petugas extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(117, 117, 117)
+                        .addComponent(status)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -177,6 +238,62 @@ public class petugas extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void simpanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_simpanMouseClicked
+        // TODO add your handling code here:
+        String A = username.getText();
+        String L = password.getText();
+        String Y = petugas.getText();
+        
+        String sql = "insert into spp (tahun,nominal) values('"+A+"','"+L+"')";
+        koneksi k = new koneksi ();
+        if(k.rubahdata(sql)){
+            status.setText("DAta berhasil ditambah");
+            aly();
+        }else{
+            status.setText("data gagal ditambah");
+        }
+        selesai();
+    }//GEN-LAST:event_simpanMouseClicked
+
+    private void batalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_batalMouseClicked
+        // TODO add your handling code here:
+        selesai();
+    }//GEN-LAST:event_batalMouseClicked
+
+    private void updateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateMouseClicked
+        // TODO add your handling code here:
+        String A = username.getText();
+        String L = password.getText();
+        String Y = petugas.getText();
+        
+        String sql = "insert into spp (tahun,nominal) values('"+A+"','"+L+"')";
+        koneksi k = new koneksi ();
+        if(k.rubahdata(sql)){
+            status.setText("DAta berhasil ditambah");
+            aly();
+        }else{
+            status.setText("data gagal ditambah");
+        }
+        selesai();
+    }//GEN-LAST:event_updateMouseClicked
+
+    private void hapusMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hapusMouseClicked
+        // TODO add your handling code here:
+        String A = username.getText();
+        String L = password.getText();
+        String Y = petugas.getText();
+        
+        String sql = "insert into spp (tahun,nominal) values('"+A+"','"+L+"')";
+        koneksi k = new koneksi ();
+        if(k.rubahdata(sql)){
+            status.setText("DAta berhasil ditambah");
+            aly();
+        }else{
+            status.setText("data gagal ditambah");
+        }
+        selesai();
+    }//GEN-LAST:event_hapusMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -193,6 +310,7 @@ public class petugas extends javax.swing.JInternalFrame {
     private javax.swing.JTextField password;
     private javax.swing.JTextField petugas;
     private javax.swing.JButton simpan;
+    private javax.swing.JLabel status;
     private javax.swing.JTable tabel;
     private javax.swing.JButton update;
     private javax.swing.JTextField username;

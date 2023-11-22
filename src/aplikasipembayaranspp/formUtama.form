@@ -20,9 +20,9 @@
         <Property name="useNullLayout" type="boolean" value="true"/>
       </Layout>
     </Container>
-    <Container class="javax.swing.JMenu" name="jMenu4">
+    <Container class="javax.swing.JMenu" name="jMenu5">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jMenu4"/>
+        <Property name="text" type="java.lang.String" value="jMenu5"/>
       </Properties>
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
@@ -47,93 +47,30 @@
         <Property name="useNullLayout" type="boolean" value="true"/>
       </Layout>
     </Container>
-    <Container class="javax.swing.JMenu" name="jMenu8">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jMenu8"/>
-      </Properties>
-
-      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
-        <Property name="useNullLayout" type="boolean" value="true"/>
-      </Layout>
-    </Container>
-    <Container class="javax.swing.JMenu" name="jMenu9">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jMenu9"/>
-      </Properties>
-
-      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
-        <Property name="useNullLayout" type="boolean" value="true"/>
-      </Layout>
-    </Container>
-    <Container class="javax.swing.JMenu" name="jMenu10">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jMenu10"/>
-      </Properties>
-
-      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
-        <Property name="useNullLayout" type="boolean" value="true"/>
-      </Layout>
-    </Container>
-    <Container class="javax.swing.JMenu" name="jMenu11">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jMenu11"/>
-      </Properties>
-
-      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
-        <Property name="useNullLayout" type="boolean" value="true"/>
-      </Layout>
-    </Container>
-    <Container class="javax.swing.JMenu" name="jMenu12">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jMenu12"/>
-      </Properties>
-
-      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
-        <Property name="useNullLayout" type="boolean" value="true"/>
-      </Layout>
-    </Container>
-    <Container class="javax.swing.JMenu" name="jMenu13">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jMenu13"/>
-      </Properties>
-
-      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
-        <Property name="useNullLayout" type="boolean" value="true"/>
-      </Layout>
-    </Container>
-    <Container class="javax.swing.JMenu" name="jMenu14">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jMenu14"/>
-      </Properties>
-
-      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
-        <Property name="useNullLayout" type="boolean" value="true"/>
-      </Layout>
-    </Container>
     <Menu class="javax.swing.JMenuBar" name="menuBar">
       <SubComponents>
-        <Menu class="javax.swing.JMenu" name="jMenu2">
+        <Menu class="javax.swing.JMenu" name="spp">
           <Properties>
             <Property name="text" type="java.lang.String" value="spp"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jMenu2MouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="sppMouseClicked"/>
           </Events>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu5">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="kelas"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jMenu5MouseClicked"/>
-          </Events>
-        </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu15">
+        <Menu class="javax.swing.JMenu" name="petugas">
           <Properties>
             <Property name="text" type="java.lang.String" value="petugas"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jMenu15MouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="petugasMouseClicked"/>
+          </Events>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="kelas">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="kelas"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="kelasMouseClicked"/>
           </Events>
         </Menu>
       </SubComponents>
@@ -167,7 +104,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="desktopPane" alignment="1" pref="298" max="32767" attributes="0"/>
+          <Component id="desktopPane" pref="279" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -178,10 +115,5 @@
         <Property name="useNullLayout" type="boolean" value="true"/>
       </Layout>
     </Container>
-    <Component class="javax.swing.JLabel" name="jLabel1">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel1"/>
-      </Properties>
-    </Component>
   </SubComponents>
 </Form>

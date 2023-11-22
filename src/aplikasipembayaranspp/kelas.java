@@ -40,9 +40,9 @@ public class kelas extends javax.swing.JInternalFrame {
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(0, 153, 153));
+        setBackground(new java.awt.Color(0, 102, 153));
 
-        tabel.setBackground(new java.awt.Color(0, 204, 204));
+        tabel.setBackground(new java.awt.Color(0, 153, 204));
         tabel.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -56,7 +56,7 @@ public class kelas extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tabel);
 
-        jPanel1.setBackground(new java.awt.Color(0, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 204));
 
         jLabel1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
         jLabel1.setText("Nama Kelas");

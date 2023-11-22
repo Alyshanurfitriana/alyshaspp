@@ -29,8 +29,16 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" min="-2" pref="572" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jScrollPane1" min="-2" pref="572" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="259" max="-2" attributes="0"/>
+                              <Component id="status" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
@@ -50,6 +58,8 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Component id="jScrollPane1" min="-2" pref="89" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
+                      <Component id="status" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <Component id="jPanel1" max="32767" attributes="0"/>
@@ -181,6 +191,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="SIMPAN"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="simpanMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="hapus">
           <Properties>
@@ -189,6 +202,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="HAPUS"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="hapusMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="batal">
           <Properties>
@@ -197,6 +213,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="BATAL"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="batalMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="update">
           <Properties>
@@ -205,6 +224,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="UPDATE"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="updateMouseClicked"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -272,6 +294,8 @@
         </Property>
         <Property name="text" type="java.lang.String" value="APLIKASI PETUGAS"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="status">
     </Component>
   </SubComponents>
 </Form>
